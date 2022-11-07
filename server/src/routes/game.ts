@@ -12,7 +12,7 @@ export async function gameRoutes(fastify: FastifyInstance) {
                 id: z.string(),
             });
 
-            const { id } = getPoolParams.parse(request.params);
+            const { id: poolId } = getPoolParams.parse(request.params);
 
             const games = await prisma.game.findMany({
                 orderBy: {
@@ -23,21 +23,25 @@ export async function gameRoutes(fastify: FastifyInstance) {
                         where: {
                             participant: {
                                 userId: request.user.sub,
-                                poolId: id,
-                            }
-                        }
-                    }
-                }
-            })
+                                poolId,
+                            },
+                        },
+                    },
+                },
+            });
+
+            const currentDate = new Date();
 
             return {
-                games: games.map(game => {
+                games: games.map((game) => {
                     return {
                         ...game,
                         guess: game.guesses.length > 0 ? game.guesses[0] : null,
                         guesses: undefined,
-                    }
-                })
-            }
-        })
+                        isOver: game.date < currentDate,
+                    };
+                }),
+            };
+        }
+    );
 }

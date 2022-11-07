@@ -21,12 +21,12 @@ Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologia
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [REACT](https://pt-br.reactjs.org)
-- [REACT NATIVE](https://reactnative.dev)
-- [NODE](https://nodejs.org/en/)
-- [TYPESCRIPT](https://www.typescriptlang.org)
-- [EXPO](https://expo.dev)
-- [TAILWIND](https://tailwindcss.com)
+- [React](https://pt-br.reactjs.org)
+- [React Native](https://reactnative.dev)
+- [Node](https://nodejs.org/en/)
+- [Typescript](https://www.typescriptlang.org)
+- [Expo](https://expo.dev)
+- [Tailwind](https://tailwindcss.com)
 - [Git e GitHub](https://github.com)
 
 ## 💻 Projeto
